@@ -17,7 +17,7 @@ app.use(express.json());
 app.use(
     cors({
         credentials: true,
-        origin: process.env.FRONTEND_URL
+        origin: '*'
     })
 );
 Lab5(app);
@@ -27,4 +27,4 @@ ModuleRoutes(app);
 CourseRoutes(app);
 AssignmentRoutes(app);
 
-app.listen(process.env.RPOT || 4000);
+app.listen(process.env.PORT || 4000);
