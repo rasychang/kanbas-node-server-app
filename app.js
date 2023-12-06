@@ -27,7 +27,13 @@ const sessionOptions = {
     secret: "anystring",
     resave: false,
     saveUninitialized: false,
-  };
+};
+sessionOptions.proxy = true;
+sessionOptions.cookie = {
+    sameSite: "none",
+    secure: true,
+};
+
 app.use(session(sessionOptions));
 app.use(express.json());
 

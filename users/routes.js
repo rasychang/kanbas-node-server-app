@@ -76,6 +76,7 @@ function UserRoutes(app) {
     req.session.destroy();
     res.sendStatus(200);
   };
+  
   const signup = async (req, res) => {
     console.log("asdfasdfadsdasfdasfadsf");
     const user = await dao.findUserByUsername(
