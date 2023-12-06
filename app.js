@@ -20,7 +20,7 @@ const app = express();
 app.use(
     cors({
         credentials: true,
-        origin: 'http://localhost:3000'
+        origin: 'https://a6--stirring-sable-a82b67.netlify.app/'
     })
 );
 const sessionOptions = {
