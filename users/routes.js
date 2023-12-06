@@ -29,14 +29,18 @@ function UserRoutes(app) {
     res.json(users);
   };
 
+  // const createUser = async (req, res) => {
+  //   const { username, password, email, role } = req.body;
+  //   const user = await dao.createUser({
+  //     username,
+  //     password,
+  //     email,
+  //     role,
+  //   });
+  //   res.json(user);
+  // };
   const createUser = async (req, res) => {
-    const { username, password, email, role } = req.body;
-    const user = await dao.createUser({
-      username,
-      password,
-      email,
-      role,
-    });
+    const user = await dao.createUser(req.body);
     res.json(user);
   };
 
@@ -76,7 +80,7 @@ function UserRoutes(app) {
     req.session.destroy();
     res.sendStatus(200);
   };
-  
+
   const signup = async (req, res) => {
     console.log("asdfasdfadsdasfdasfadsf");
     const user = await dao.findUserByUsername(
